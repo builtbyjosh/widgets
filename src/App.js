@@ -1,5 +1,28 @@
 import React from "react";
+import Accordion from "./components/Accordion";
+
+const items = [
+  {
+    title: "What is React?",
+    content:
+      " Lorem ipsum, dolor sit amet consectetur adipisicing elit. A assumenda eos optio officia minima cum eveniet itaque, eius soluta quae perferendis obcaecati totam aperiam excepturi impedit distinctio inventore laudantium fugiat?",
+  },
+  {
+    title: "Why use React?",
+    content:
+      " Lorem ipsum, dolor sit amet consectetur adipisicing elit. A assumenda eos optio officia minima cum eveniet itaque, eius soluta quae perferendis obcaecati totam aperiam excepturi impedit distinctio inventore laudantium fugiat?",
+  },
+  {
+    title: "How to use React?",
+    content:
+      " Lorem ipsum, dolor sit amet consectetur adipisicing elit. A assumenda eos optio officia minima cum eveniet itaque, eius soluta quae perferendis obcaecati totam aperiam excepturi impedit distinctio inventore laudantium fugiat?",
+  },
+];
 
 export default () => {
-  return <h1>Widgets App</h1>;
+  return (
+    <div>
+      <Accordion items={items}/>
+    </div>
+  );
 };
