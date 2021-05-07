@@ -6,18 +6,15 @@ import Search from "./components/Search";
 const items = [
   {
     title: "What is React?",
-    content:
-      " Lorem ipsum, dolor sit amet consectetur adipisicing elit. A assumenda eos optio officia minima cum eveniet itaque, eius soluta quae perferendis obcaecati totam aperiam excepturi impedit distinctio inventore laudantium fugiat?",
+    content: "React is a front end javascript framework",
   },
   {
     title: "Why use React?",
-    content:
-      " Lorem ipsum, dolor sit amet consectetur adipisicing elit. A assumenda eos optio officia minima cum eveniet itaque, eius soluta quae perferendis obcaecati totam aperiam excepturi impedit distinctio inventore laudantium fugiat?",
+    content: "React is a favorite JS library among engineers",
   },
   {
-    title: "How to use React?",
-    content:
-      " Lorem ipsum, dolor sit amet consectetur adipisicing elit. A assumenda eos optio officia minima cum eveniet itaque, eius soluta quae perferendis obcaecati totam aperiam excepturi impedit distinctio inventore laudantium fugiat?",
+    title: "How do you use React?",
+    content: "You use React by creating components",
   },
 ];
 
@@ -36,17 +33,25 @@ const options = [
   },
 ];
 
-export default () => {
+const App = () => {
   const [selected, setSelected] = useState(options[0]);
+  const [showDropdown, setShowDropdown] = useState(true);
+
   return (
     <div>
       {/* <Accordion items={items}/> */}
       {/* <Search /> */}
-      <Dropdown
-        options={options}
-        selected={selected}
-        onSelectedChange={setSelected}
-      />
+      <button onClick={() => setShowDropdown(!showDropdown)}>
+        Toggle Dropdown
+      </button>
+      {showDropdown ? (
+        <Dropdown
+          options={options}
+          selected={selected}
+          onSelectedChange={setSelected}
+        />
+      ) : null}
     </div>
   );
 };
+export default App;
