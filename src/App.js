@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Accordion from "./components/Accordion";
 import Dropdown from "./components/Dropdown";
+import Header from "./components/Header";
+import Route from "./components/Route";
 import Search from "./components/Search";
 import Translate from "./components/Translate";
 
@@ -39,14 +41,24 @@ const App = () => {
 
   return (
     <div>
-      {/* <Accordion items={items}/> */}
-      {/* <Search /> */}
-      {/* <Dropdown
-        options={options}
-        selected={selected}
-        onSelectedChange={setSelected}
-      /> */}
-      <Translate />
+      <Header />
+      <Route path="/">
+        <Accordion items={items} />
+      </Route>
+      <Route path="/list">
+        <Search />
+      </Route>
+      <Route path="/dropdown">
+        <Dropdown
+          label="Select a color"
+          options={options}
+          selected={selected}
+          onSelectedChange={setSelected}
+        />
+      </Route>
+      <Route path="/translate">
+        <Translate />
+      </Route>
     </div>
   );
 };
